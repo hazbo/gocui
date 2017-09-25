@@ -120,6 +120,14 @@ func (v *View) Name() string {
 	return v.name
 }
 
+// Lines returns the number of lines in the buffer
+func (v *View) Lines() int {
+	if len(v.lines) == 0 {
+		return 1
+	}
+	return len(v.lines)
+}
+
 // setRune sets a rune at the given point relative to the view. It applies the
 // specified colors, taking into account if the cell must be highlighted. Also,
 // it checks if the position is valid.
